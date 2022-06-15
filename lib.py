@@ -36,13 +36,9 @@ def s3(number):
 
 def isprime(number):
     """Returns True if number is prime."""
-    if number == 2:
+    if number == 2 or number == 3:
         return True
-    if number == 3:
-        return True
-    if number % 2 == 0:
-        return False
-    if number % 3 == 0:
+    if number % 2 == 0 or number % 3 == 0:
         return False
 
     i = 5
@@ -59,7 +55,11 @@ def isprime(number):
 
 
 def common_prime_divisors(a, b):
-    return (i for i in range(1, min(a, b) + 1) if a % i == b % i == 0)
+    return (
+        i
+        for i in range(1, min(a, b) + 1)
+        if a % i == b % i == 0 and isprime(i) and i != 1
+    )
 
 
 def palindrome(m, n):
