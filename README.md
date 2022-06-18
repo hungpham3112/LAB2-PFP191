@@ -1,4 +1,4 @@
-# Function_practice
+# LAB2-PFP191
 
 ## Prerequisite
 
